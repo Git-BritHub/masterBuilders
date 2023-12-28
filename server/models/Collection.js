@@ -1,28 +1,26 @@
 const { Schema, model } = require('mongoose');
 
-// fields/columns for collection model
 const collectionSchema = new Schema(
   {
-    id: {
-      type: DataTypes.INTEGER,
+    setId: {
+      type: Schema.Types.ObjectId,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
+    setName: {
+      type: String,
     },
-    set_num: {
-        type: DataTypes.STRING
+    setNum: {
+        type: String,
     },
-    set_img_url: {
-        type: DataTypes.STRING
+    setImgUrl: {
+        type: String,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
+    userId: {
+      type: Schema.Types.ObjectId,
       references: {
-        model: 'User',
-        key: 'id',
+        ref: 'User',
       },
     },
   },
