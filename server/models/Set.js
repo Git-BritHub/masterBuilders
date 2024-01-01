@@ -1,48 +1,43 @@
 const { Schema, model } = require('mongoose');
 
-// create our sets model
-class Sets extends Model { }
-
-// create fields/columns for sets model
-Sets.init(
+const setSchema = new Schema(
     {
-        set_id: {
+        setId: {
+            type: Schema.Types.ObjectId,
             allowNull: false,
-            type: DataTypes.INTEGER,
-            primaryKey: true
-        },
-        set_name: {
-            allowNull: false,
-            type: DataTypes.STRING
-        },
+            primaryKey: true,
+            autoIncrement: true,
+          },
+          setName: {
+            type: String,
+          },
         parts: {
-            type: DataTypes.INTEGER
+            type: Schema.Types.ObjectId,
         },
-        label_id: {
+        categoryId: {
             allowNull: false,
-            type: DataTypes.INTEGER,
+            type: Schema.Types.ObjectId,
             references: {
-                model: 'labels',
-                key: 'label_id',
+                model: 'Category',
+                key: 'categoryId',
             },
         },
-        user_id: {
+        userId: {
             allowNull: false,
-            type: DataTypes.INTEGER,
+            type: Schema.Types.ObjectId,
             references: {
-                model: 'user',
+                model: 'User',
                 key: 'id',
             },
         },
     },
     {
-        sequelize,
-        timestamps: false,
-        // Prevent sequelize from renaming the table
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'sets'
+        toJSON: {
+            getters: true,
+        },
+        id: false,
     }
 );
 
-module.exports = Sets;
+const Set = model('Set', setSchema);
+module.exports = Set;
