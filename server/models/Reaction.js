@@ -22,7 +22,7 @@ const reactionSchema = new Schema(
         reactionIcon: {
             type: String,
         },
-        reactiontAuthor: {
+        reactionAuthor: {
             type: String,
             required: true,
         },
