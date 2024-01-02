@@ -37,7 +37,7 @@ const userSchema = new Schema(
         tiktok: {
             type: String,
         },
-        twitter: {
+        x: {
             type: String,
         },
         collection: {
