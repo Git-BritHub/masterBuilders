@@ -46,7 +46,7 @@ const userSchema = new Schema(
         wishlist: {
             type: String,
         },
-        categories: [
+        category: [
 			{
 				type: Schema.Types.ObjectId,
 				ref: 'Category',
