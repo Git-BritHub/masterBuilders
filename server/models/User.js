@@ -40,12 +40,18 @@ const userSchema = new Schema(
         x: {
             type: String,
         },
-        collection: {
-            type: String,
-        },
-        wishlist: {
-            type: String,
-        },
+        collection: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'Collection',
+			},
+		],
+        wishlist: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'Wishlist',
+			},
+		],
         category: [
 			{
 				type: Schema.Types.ObjectId,
