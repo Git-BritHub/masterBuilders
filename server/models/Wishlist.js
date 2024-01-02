@@ -4,9 +4,7 @@ const wishlistSchema = new Schema(
   {
     setId: {
       type: Schema.Types.ObjectId,
-      allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
     },
     setName: {
       type: String,
@@ -19,9 +17,8 @@ const wishlistSchema = new Schema(
     },
     userId: {
       type: Schema.Types.ObjectId,
-      references: {
-        ref: 'User',
-      },
+      ref: 'User',
+      required: true
     },
   },
   {
@@ -29,7 +26,7 @@ const wishlistSchema = new Schema(
         getters: true,
     },
     id: false,
-}
+  }
 );
 
 const Wishlist = model('Wishlist', wishlistSchema);
