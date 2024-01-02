@@ -5,18 +5,16 @@ const categorySchema = new Schema(
     {
         categoryId: {
             type: Schema.Types.ObjectId,
-            allowNull: false,
+            required: true,
             primaryKey: true,
         },
         categoryName: {
-            allowNull: false,
-            type: DataTypes.STRING
+            type: String,
+            required: true,
         },
         userId: {
-            allowNull: false,
             type: Schema.Types.ObjectId,
             ref: 'User',
-            allowNull: true
         },
         sets: [setsSchema],
     },
