@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const setSchema = require('./Set');
+const setsSchema = require('./Sets');
 
 const categorySchema = new Schema(
     {
@@ -18,7 +18,7 @@ const categorySchema = new Schema(
             ref: 'User',
             allowNull: true
         },
-        sets: [setSchema],
+        sets: [setsSchema],
     },
     {
         toJSON: {

@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const setSchema = new Schema(
+const setsSchema = new Schema(
     {
         setId: {
             type: Schema.Types.ObjectId,
@@ -37,5 +37,5 @@ const setSchema = new Schema(
     }
 );
 
-const Set = model('Set', setSchema);
-module.exports = Set;
+const Sets = model('Sets', setsSchema);
+module.exports = Sets;
