@@ -25,10 +25,8 @@ const setSchema = new Schema(
         userId: {
             allowNull: false,
             type: Schema.Types.ObjectId,
-            references: {
-                model: 'User',
-                key: 'id',
-            },
+            ref: 'User',
+            allowNull: true
         },
     },
     {
