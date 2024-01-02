@@ -4,9 +4,7 @@ const collectionSchema = new Schema(
   {
     setId: {
       type: Schema.Types.ObjectId,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+      required: true,
     },
     setName: {
       type: String,
@@ -19,9 +17,8 @@ const collectionSchema = new Schema(
     },
     userId: {
       type: Schema.Types.ObjectId,
-      references: {
-        ref: 'User',
-      },
+      ref: 'User',
+      required: true,
     },
   },
   {

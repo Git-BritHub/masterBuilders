@@ -4,7 +4,7 @@ const wishlistSchema = new Schema(
   {
     setId: {
       type: Schema.Types.ObjectId,
-      primaryKey: true,
+      required: true,
     },
     setName: {
       type: String,
