@@ -4,29 +4,30 @@ const setsSchema = new Schema(
     {
         setId: {
             type: Schema.Types.ObjectId,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
+            required: true,
           },
-          setName: {
+        setName: {
             type: String,
-          },
+            required: true,
+        },
+        setNum: {
+            type: String,
+        },
+        setImgUrl: {
+            type: String,
+        },
         parts: {
             type: Schema.Types.ObjectId,
         },
         categoryId: {
-            allowNull: false,
             type: Schema.Types.ObjectId,
-            references: {
-                model: 'Category',
-                key: 'categoryId',
-            },
+            ref: 'Category',
+            required: true
         },
         userId: {
-            allowNull: false,
             type: Schema.Types.ObjectId,
             ref: 'User',
-            allowNull: true
+            required: true
         },
     },
     {
