@@ -35,7 +35,6 @@ const postSchema = new Schema(
         postAuthor: {
             type: Schema.Types.ObjectId,
             ref: 'User',
-            allowNull: true
         },
         reactions: [reactionSchema],
         comments: [commentSchema],
