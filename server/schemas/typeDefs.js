@@ -3,13 +3,17 @@ type User {
     _id: ID!
     username: String!
     email: String
-    pic: String
+    profilePic: String
     location: String
     bio: String
-    gitHub: String
-    linkedIn: String
     instagram: String
-    stackOverflow: String
+    facebook: String
+    tiktok: String
+    x: String
+    collection: [Collection]
+    wishlist: [Wishlist]
+    category: [Category]
+    sets: [Sets]
     posts: [Post]
     reactions: [Reaction]
     friendCount: Int
