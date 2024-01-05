@@ -21,6 +21,7 @@ const reactionSchema = new Schema(
         },
         reactionIcon: {
             type: String,
+            required: true,
         },
         reactionAuthor: {
             type: String,

@@ -15,12 +15,10 @@ type User {
     category: [Category]
     sets: [Sets]
     posts: [Post]
-    reactions: [Reaction]
     friendCount: Int
     friends: [User]
     friendPosts: [Post]
 }
-
 type Collection {
     _id: ID!
     setName: String
@@ -64,6 +62,13 @@ type Comment {
     _id: ID!
     commentText: String!
     commentAuthor: String!
+    createdAt: String
+    reactions: [Reaction]
+}
+type Reaction {
+    _id: ID!
+    reactionIcon: String!
+    reactionAuthor: String!
     createdAt: String
 }
 type Auth {
