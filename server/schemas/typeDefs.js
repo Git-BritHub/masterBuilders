@@ -20,6 +20,34 @@ type User {
     friends: [User]
     friendPosts: [Post]
 }
+
+type Collection {
+    _id: ID!
+    setName: String
+    setNum: String
+    setImgURL: String
+}
+type Wishlist {
+    _id: ID!
+    setName: String
+    setNum: String
+    setImgURL: String
+}
+type Category {
+    _id: ID!
+    categoryId: ID!
+    categoryName: String!
+    sets: [Set]
+}
+type Set {
+    _id: ID!
+    setId: ID!
+    setName: String!
+    setNum: String
+    setImgUrl: String
+    parts: ID
+    categoryId: ID!
+}
 type Post {
     _id: ID!
     username: [Post]
