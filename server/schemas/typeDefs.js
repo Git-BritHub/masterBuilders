@@ -45,6 +45,14 @@ type Sets {
     parts: ID
     themeId: ID!
 }
+input setsInput {
+    setId: ID!
+    setName: String!
+    setNum: String
+    setImgUrl: String
+    parts: ID
+    themeId: ID!
+}
 type Post {
     _id: ID!
     username: [Post]
@@ -112,6 +120,8 @@ type Mutation {
     updateUserInfo(username: String!, bio: String, github: String, linkedIn: String, instagram: String, stackOverflow: String): User
     addFriend(username: String, friendsId: ID): FriendUser
     deleteFriend(friendsId: ID!): FriendUser
+    addSet(setsData: setsInput!): User
+    deleteSet(setId: ID!): User
     addPost(postText: String!): Post
     savedPost(postText: Postinput): User
     deletePost(_id: ID!): User
