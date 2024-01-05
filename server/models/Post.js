@@ -18,6 +18,10 @@ function dateFormat(timestamp) {
 
 const postSchema = new Schema(
     {
+        PostId: {
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(),
+        },
         postText: {
             type: String,
             required: true,

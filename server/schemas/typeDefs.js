@@ -36,7 +36,7 @@ type Theme {
     themeName: String!
     sets: [Set]
 }
-type Set {
+type Sets {
     _id: ID!
     setId: ID!
     setName: String!
@@ -78,11 +78,15 @@ type Friend {
     _id: ID!
     username: String
     friendPosts: [Post]
+    friendComments: [Comment]
+    friendReactions: [Reaction]
 }
 type Friends {
     friendsId: ID
     username: String
     friendPosts: [Post]
+    friendComments: [Comment]
+    friendReactions: [Reaction]
 }
 type FriendUser {
     currentUser: User
@@ -91,6 +95,10 @@ type FriendUser {
 type Query {
     me: User
     user(username: String!): User
+    collection(username: String!): Collection
+    wishlist(username: String!): Wishlist
+    theme(themeId: ID!): Theme
+    sets(setId: ID!): Sets
     posts(username: String): Post
     post(postId: ID!): Post
     users: [User]
