@@ -1,14 +1,14 @@
 const { Schema, model } = require('mongoose');
 const setsSchema = require('./Sets');
 
-const categorySchema = new Schema(
+const themeSchema = new Schema(
     {
-        categoryId: {
+        themeId: {
             type: Schema.Types.ObjectId,
             required: true,
             unique: true,
         },
-        categoryName: {
+        themeName: {
             type: String,
             required: true,
         },
@@ -26,5 +26,5 @@ const categorySchema = new Schema(
     }
 );
 
-const Category = model('Category', categorySchema);
-module.exports = Category;
+const Theme = model('Theme', themeSchema);
+module.exports = Theme;

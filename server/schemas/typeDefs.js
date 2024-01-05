@@ -12,7 +12,7 @@ type User {
     x: String
     collection: [Collection]
     wishlist: [Wishlist]
-    category: [Category]
+    theme: [Theme]
     sets: [Sets]
     posts: [Post]
     friendCount: Int
@@ -31,10 +31,9 @@ type Wishlist {
     setNum: String
     setImgURL: String
 }
-type Category {
+type Theme {
     _id: ID!
-    categoryId: ID!
-    categoryName: String!
+    themeName: String!
     sets: [Set]
 }
 type Set {
@@ -44,7 +43,7 @@ type Set {
     setNum: String
     setImgUrl: String
     parts: ID
-    categoryId: ID!
+    themeId: ID!
 }
 type Post {
     _id: ID!

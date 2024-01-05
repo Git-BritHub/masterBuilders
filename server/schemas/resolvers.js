@@ -1,4 +1,4 @@
-const { User, Category, Collection, Wishlist, Sets, Post } = require('../models');
+const { User, Theme, Collection, Wishlist, Sets, Post } = require('../models');
 // const {
 // 	signToken,
 // 	AuthenticationError,

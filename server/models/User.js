@@ -52,10 +52,10 @@ const userSchema = new Schema(
 				ref: 'Wishlist',
 			},
 		],
-        category: [
+        theme: [
 			{
 				type: Schema.Types.ObjectId,
-				ref: 'Category',
+				ref: 'Theme',
 			},
 		],
         sets: [

@@ -19,9 +19,9 @@ const setsSchema = new Schema(
         parts: {
             type: Schema.Types.ObjectId,
         },
-        categoryId: {
+        themeId: {
             type: Schema.Types.ObjectId,
-            ref: 'Category',
+            ref: 'Theme',
             required: true
         },
         userId: {
